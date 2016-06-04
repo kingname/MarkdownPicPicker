@@ -1,3 +1,5 @@
 Pillow==3.2.0
+pyHook==1.5.1
+pywin32==220.1
 qiniu==7.0.7
 requests==2.10.0
