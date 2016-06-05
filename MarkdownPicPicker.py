@@ -31,9 +31,9 @@ class MarkrdownPicPicker(object):
         there are some bugs in pyHook, if a windows name is Unicode, it will make
         python crash. wait until pyHook is fixed up.
         '''
-        if self.METHOD = 'bat'
+        if self.METHOD == 'bat':
             self.upload_picture()
-        elif self.METHOD = 'pyHook':
+        elif self.METHOD == 'pyHook':
             self.keyboard_listen
 
     def init_environment(self):
