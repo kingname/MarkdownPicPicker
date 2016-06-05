@@ -16,32 +16,35 @@ MarkdownPicPicker 是一个Markdown写作辅助工具。它能将剪贴板中的
 
 ### 配置
 
-以下部分需要做对应的修改：
+配置文件保存在`config.ini`文件中，其意义分别如下：
+```ini
+[basic]
+run_method = bat # 设定程序的运行方式，bat为使用bat文件触发，global_listen为全局键盘监听方式
+picture_folder = pic #设定程序的运行方式，bat为使用bat文件触发，pyHook为全局键盘监听方式
+picture_suffix = png #截图的保存格式，可以选择bmp或者png
+# now support qiniu only
+picture_bed = qiniu #设定上传图片到七牛云
 
+[global_listen]
+short_key_one = Lwin #快捷键第一个按键
+short_key_two = C #快捷键第二个按键
+
+[qiniu]
+#七牛云的相关配置
+access_key = Q6sS422O05AwYD5aVqM3FqCcCpF36tqvyQ75Zvzw
+secret_key = 6QtAqqTxoSxZP-2uoXROehxPLX2CCmoOaB2aLObM
+container_name = picturebed  #七牛云的图片储存位置
+url = http://7sbpmp.com1.z0.glb.clouddn.com/{} #七牛云分配的默认域名
 ```
-METHOD = 'bat' #设定程序的运行方式，bat为使用bat文件触发，pyHook为全局键盘监听方式
-PICTURE_FOLDER = 'pic' #截图的本地保存文件夹，可以根据实际情况修改。
-PICTURE_SUFFIX = 'png' #截图的保存格式，可以选择bmp或者png
 
-#以下两行来自于七牛云
-ACCESS_KEY = 'Q6sS422O05Aw34523M3FqCcCpF36tqvyQ75Zvzw' 
-SECRET_KEY = '6QtAqqTxoSxZP-25643hhxPLX2CCmoOaB2aLObM'
-
-CONTAINER_NAME = 'picturebed' #七牛云的图片储存位置
-URL = 'http://7sbpmp.com1.z0.glb.clouddn.com/{}' #七牛云分配的默认域名
-
-SHORT_KEY_ONE = 'Lwin' #快捷键第一个按键
-SHORT_KEY_TWO = 'C' #快捷键第二个按键
-```
-
-其中`ACCESS_KEY` 和 `SECRET_KEY` 可以在七牛云的控制面板中看到，如图：
+其中`access_key` 和 `secret_key` 可以在七牛云的控制面板中看到，如图：
 ![](http://7sbpmp.com1.z0.glb.clouddn.com/20160605083025.png) 
 ![](http://7sbpmp.com1.z0.glb.clouddn.com/2016-06-04-20-22-43.png) 
 
-`CONTAINER_NAME` 为下图所示内容：
+`container_name` 为下图所示内容：
 ![](http://7sbpmp.com1.z0.glb.clouddn.com/2016-06-04-20-24-40.png) 
 
-`SHORT_KEY_ONE` 和 `SHORT_KEY_TWO` 为快捷键的两个按键，默认为左侧windows徽标键(`Lwin`) 和 字母 `C`。
+`short_key_one` 和 `short_key_two` 为快捷键的两个按键，默认为左侧windows徽标键(`Lwin`) 和 字母 `C`。
 
 ### 使用
 
