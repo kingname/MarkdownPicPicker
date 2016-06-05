@@ -35,7 +35,7 @@ SHORT_KEY_TWO = 'C' #快捷键第二个按键
 ```
 
 其中`ACCESS_KEY` 和 `SECRET_KEY` 可以在七牛云的控制面板中看到，如图：
-![](http://7sbpmp.com1.z0.glb.clouddn.com/2016-06-04-20-21-59.png) 
+![](http://7sbpmp.com1.z0.glb.clouddn.com/20160605083025.png) 
 ![](http://7sbpmp.com1.z0.glb.clouddn.com/2016-06-04-20-22-43.png) 
 
 `CONTAINER_NAME` 为下图所示内容：
