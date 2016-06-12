@@ -17,7 +17,7 @@ except ImportError:
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-__version__ = 0.2
+__version__ = '0.2.1'
 __author__ = 'kingname'
 
 
