@@ -2,6 +2,7 @@ from PIL import ImageGrab, ImageFile
 from configparser import ConfigParser
 from uploader.QiniuUploader import QiniuUploader
 import time
+import sys
 import os
 try:
     import pythoncom
@@ -24,7 +25,7 @@ class MarkrdownPicPicker(object):
 
     CONFIG_PATH = 'config.ini'
 
-    def __init__(self):
+    def __init__(self, link_only=False):
 
         self.method = ''
         self.picture_folder = ''
@@ -35,6 +36,7 @@ class MarkrdownPicPicker(object):
         self.key_one = False
         self.key_two = False
         self.uploader = None
+        self.link_only = link_only
 
         self.init_environment()
 
@@ -101,7 +103,7 @@ class MarkrdownPicPicker(object):
             return False
         else:
             self.uploader.upload(picture_path, picture_name)
-            self.uploader.write_markdown_picture_url(picture_name)
+            self.uploader.write_markdown_picture_url(picture_name, link_only=True if self.link_only else False)
             return True
 
     def save_picture(self):
@@ -120,4 +122,8 @@ class MarkrdownPicPicker(object):
         return '', ''
 
 if __name__ == '__main__':
-    MarkrdownPicPicker()
+    arg = sys.argv[-1]
+    if arg == '-linkonly':
+        MarkrdownPicPicker(link_only=True)
+    else:
+        MarkrdownPicPicker()
