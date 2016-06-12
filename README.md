@@ -64,6 +64,15 @@ cmd /k "G:\github\MarkdownPicPicker\venv\Scripts\activate & cd /d G:\github\Mark
 cmd /k "cd /d <MarkdownPicPicker.py脚本所在文件夹路径> & python MarkdownPicPicker.py & exit"
 ```
 
+###只复制图片链接
+
+如果你希望只将图片的url复制到剪贴板中，而不是复制\!\[\]\(图片url\)， 你可以为MarkdownPicPicker.py添加上 `-linkonly` 参数。
+
+```
+@echo off
+cmd /k "G:\github\MarkdownPicPicker\venv\Scripts\activate & cd /d G:\github\MarkdownPicPicker & python MarkdownPicPicker.py -linkonly & deactivate & exit"
+```
+
 另外，无论哪种情况，均不要出现中文路径。
 
 然后右键选择批处理，发送到桌面快捷方式。接着右键快捷方式，属性，在“快捷键” 这一栏按下字母Q，它将自动填充为 `Ctrl + Alt + Q`, 确定。
