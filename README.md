@@ -6,7 +6,7 @@ MarkdownPicPicker 是一个Markdown写作辅助工具。它能将剪贴板中的
 
 ## 功能介绍
 
-第0.2版有以下功能：
+第0.2.2版有以下功能：
 
 1. 使用七牛云作为图床。
 2. 将图片保存在本地
@@ -50,40 +50,26 @@ url = http://7sbpmp.com1.z0.glb.clouddn.com/{} #七牛云分配的默认域名
 
 ### 使用
 
-将程序配置好以后运行，创建一个批处理文件markdownpicpicker.bat, 其内容如下：
-```
-@echo off
-cmd /k "G:\github\MarkdownPicPicker\venv\Scripts\activate & cd /d G:\github\MarkdownPicPicker & python MarkdownPicPicker.py & deactivate & exit"
-```
-路径请根据实际情况修改。
-
-由于我使用了virtualenv, 所以需要在批处理中进入virtualenv的环境才能正常运行程序。对于将requirements.txt里面包含的库直接安装在全局的情况，bat 可以简化：
-
-```
-@echo off
-cmd /k "cd /d <MarkdownPicPicker.py脚本所在文件夹路径> & python MarkdownPicPicker.py & exit"
-```
+1. 下载最新版程序：[https://github.com/kingname/MarkdownPicPicker/releases/download/v0.2.2/MarkdownPicPicker-v0.2.2.zip](https://github.com/kingname/MarkdownPicPicker/releases/download/v0.2/MarkdownPicPicker-v0.2.2.zip)下
+2. 修改config.ini
+3. 复制图片到剪贴板
+4. 双击运行markdownpicpicker.exe
 
 ###只复制图片链接
 
-如果你希望只将图片的url复制到剪贴板中，而不是复制\!\[\]\(图片url\)， 你可以为MarkdownPicPicker.py添加上 `-linkonly` 参数。
-
+如果你希望只将图片的url复制到剪贴板中，而不是复制\!\[\]\(图片url\)， 你可以为markdownpicpicker.exe添加上 `-linkonly` 参数。在markdownpicpicker.exe所在目录打开cmd, 输入:
 ```
-@echo off
-cmd /k "G:\github\MarkdownPicPicker\venv\Scripts\activate & cd /d G:\github\MarkdownPicPicker & python MarkdownPicPicker.py -linkonly & deactivate & exit"
+markdownpicpicker.exe -linkonly
 ```
 
-另外，无论哪种情况，均不要出现中文路径。
+建议大家使用AutoHotKey来启动程序。这样可以把整个流程缩短到2秒钟。AutoHotKey的配置示例如下图所示：
 
-然后右键选择批处理，发送到桌面快捷方式。接着右键快捷方式，属性，在“快捷键” 这一栏按下字母Q，它将自动填充为 `Ctrl + Alt + Q`, 确定。
+![](http://7sbpmp.com1.z0.glb.clouddn.com/2016-07-16-11-54-13.png) 
 
-![](http://7sbpmp.com1.z0.glb.clouddn.com/2016-06-05-00-45-03.png) 
-
-只需要首先使用QQ截图或者其他截图工具将图片保存到剪贴板中，然后按下设定好的快捷键即可。Markdown格式的图片链接就已经保存到剪贴板中了。在需要使用的地方直接粘贴。
-
-不过这样设定的快捷键，按下以后会有大概一秒钟的延迟。推荐大家使用AutoHotKey来触发这个bat文件。
+需要首先使用QQ截图或者其他截图工具将图片保存到剪贴板中，然后按下设定好的快捷键即可。Markdown格式的图片链接就已经保存到剪贴板中了。在需要使用的地方直接粘贴。
 
 ## 说明
+如果你希望自己从源代码编译程序，请注意以下问题：
 
 ### Pillow bug修正
 本程序使用了Pillow库中的 `ImageGrab.grabclipboard()` 方法来获取剪贴板中的数据，但是由于这个方法有一个bug, 导致可能会爆以下错误：
