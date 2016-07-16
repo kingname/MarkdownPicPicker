@@ -17,7 +17,7 @@ except ImportError:
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-__version__ = '0.2.1'
+__version__ = '0.2.2'
 __author__ = 'kingname'
 
 
@@ -57,11 +57,15 @@ class MarkrdownPicPicker(object):
             os.makedirs(self.picture_folder)
 
     def read_config(self):
+        if getattr(sys, 'frozen', None):
+            config_path = os.path.join(os.path.dirname(sys.executable), self.CONFIG_PATH)
+        else:
+            config_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), self.CONFIG_PATH)
         configs = ConfigParser()
-        if not os.path.exists(self.CONFIG_PATH):
+        if not os.path.exists(config_path):
             print('can not find the config.ini, exit')
             exit()
-        configs.read(self.CONFIG_PATH)
+        configs.read(config_path)
         self.method = configs['basic'].get('run_method', '')
         self.picture_folder = configs['basic'].get('picture_folder', '')
         self.picture_suffix = configs['basic'].get('picture_suffix', '')

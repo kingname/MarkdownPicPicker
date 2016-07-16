@@ -15,7 +15,10 @@ class QiniuUploader(object):
             info = put_file(token, picture_name, picture_path)
             print(info)
 
-    def write_markdown_picture_url(self, picture_name):
-        markdown_picture_url = '![]({})'.format(self.url.format(picture_name))
+    def write_markdown_picture_url(self, picture_name, link_only=False):
+        if link_only:
+            markdown_picture_url = self.url.format(picture_name)
+        else:
+            markdown_picture_url = '![]({})'.format(self.url.format(picture_name))
         command = 'echo {} | clip'.format(markdown_picture_url)
         os.system(command)
