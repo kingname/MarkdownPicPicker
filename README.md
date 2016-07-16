@@ -50,7 +50,7 @@ url = http://7sbpmp.com1.z0.glb.clouddn.com/{} #七牛云分配的默认域名
 
 ### 使用
 
-1. 下载最新版程序：[https://github.com/kingname/MarkdownPicPicker/releases/download/v0.2.2/MarkdownPicPicker-v0.2.2.zip](https://github.com/kingname/MarkdownPicPicker/releases/download/v0.2/MarkdownPicPicker-v0.2.2.zip)下
+1. 下载最新版程序：[https://github.com/kingname/MarkdownPicPicker/releases/download/v0.2.2/MarkdownPicPicker_v0.2.2.zip](https://github.com/kingname/MarkdownPicPicker/releases/download/v0.2.2/MarkdownPicPicker_v0.2.2.zip)下
 2. 修改config.ini
 3. 复制图片到剪贴板
 4. 双击运行markdownpicpicker.exe
