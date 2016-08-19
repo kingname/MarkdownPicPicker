@@ -116,8 +116,15 @@ class MarkrdownPicPicker(object):
         return '', ''
 
 if __name__ == '__main__':
-    arg = sys.argv[-1]
-    if arg == '-linkonly':
-        MarkrdownPicPicker(link_only=True)
-    else:
-        MarkrdownPicPicker()
+    # arg = sys.argv[-1]
+    # if arg == '-linkonly':
+    #     MarkrdownPicPicker(link_only=True)
+    # else:
+    #     MarkrdownPicPicker()
+
+    # test qiniu uploader
+
+    config_info = read_config()
+    qiniu = QiniuUploader(config_info['uploader_info'])
+    print(qiniu.container_name,qiniu.url,qiniu.upload_handler)
+    qiniu.upload('uploader/picture.jpeg','test_pic')
