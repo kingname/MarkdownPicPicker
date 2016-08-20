@@ -6,21 +6,31 @@ MarkdownPicPicker 是一个Markdown写作辅助工具。它能将剪贴板中的
 
 ## 功能介绍
 
-第1.0.0版有以下功能：
+第1.1.0版有以下功能：
 
-1. 图床支持七牛云与SM.MS, 默认使用SM.MS。
+1. 图床支持七牛云与SM.MS, 默认使用SM.MS
+2. 支持OS X
 2. 将图片保存在本地
 3. 图片上传成功后将Markdown格式的图片地址保存到剪贴板中
 4. Uploader扩展性
 
 ## 使用方法
 
+### Windows
+
 1. 下载最新版程序：[https://github.com/kingname/MarkdownPicPicker/releases/download/v1.0.0/MarkdownPicPicker_v1.0.0.zip](https://github.com/kingname/MarkdownPicPicker/releases/download/v1.0.0/MarkdownPicPicker_v1.0.0.zip)
 2. 复制图片到剪贴板
 3. 双击运行markdownpicpicker.exe
 
+### Mac OS
+0. 安装pngpaste: `brew install pngpaste`
+1. Clone 源代码
+2. 复制图片到剪贴板
+3. `python MarkdownPicPicker.py`
+
+## 配置
 ### 使用七牛云
-在没有配置文件的情况下，MarkdownPicPicker默认使用的图床为SM.MS, 但是这个图床仅仅作为临时使用，不保证数据安全。如果你需要使用七牛云，请创建config文件夹，并将config.ini配置好再放进去。
+在没有配置文件的情况下，MarkdownPicPicker默认使用的图床为SM.MS, 但是这个图床仅仅作为临时使用，可能会被墙，也不保证数据安全。如果你需要使用七牛云，请创建config文件夹，并将config.ini配置好再放进去。
 
 ### 配置
 
@@ -133,4 +143,4 @@ else:
 * 支持更多的截图方式
 * 支持更多的图床
 * 窗口隐藏
-* 适配Linux 和 Mac OS(即将上线)
+* 适配Linux

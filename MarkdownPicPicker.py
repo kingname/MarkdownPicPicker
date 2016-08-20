@@ -8,7 +8,7 @@ except Exception as _:
     print('read config error, use default info.')
     read_config = None
 
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 __author__ = 'kingname'
 
 

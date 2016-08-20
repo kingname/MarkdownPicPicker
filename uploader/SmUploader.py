@@ -1,5 +1,6 @@
 import requests
 import json
+import sys
 import os
 
 class Uploader(object):
@@ -50,10 +51,14 @@ class Uploader(object):
             markdown_picture_url = pic_url
         else:
             markdown_picture_url = '![]({})'.format(pic_url)
-        command = 'echo {} | clip'.format(markdown_picture_url)
+        platform = sys.platform
+        command = ''
+        if platform == 'win32':
+            command = 'echo {} | clip'.format(markdown_picture_url)
+        elif platform == 'darwin':
+            command = 'echo "{}" | pbcopy'.format(markdown_picture_url)
         os.system(command)
         print('the url is already in your clipboard!')
-
 
 if __name__ == '__main__':
     uploader = Uploader({'url': 'https://sm.ms/api/upload'})

@@ -1,5 +1,6 @@
 from qiniu import Auth, put_file
 import os
+import sys
 
 
 class Uploader(object):
@@ -23,7 +24,12 @@ class Uploader(object):
             markdown_picture_url = self.url.format(picture_name)
         else:
             markdown_picture_url = '![]({})'.format(self.url.format(picture_name))
-        command = 'echo {} | clip'.format(markdown_picture_url)
+        platform = sys.platform
+        command = ''
+        if platform == 'win32':
+            command = 'echo {} | clip'.format(markdown_picture_url)
+        elif platform == 'darwin':
+            command = 'echo "{}" | pbcopy'.format(markdown_picture_url)
         os.system(command)
         print('the url is already in your clipboard!')
 
