@@ -1,5 +1,6 @@
-import sys,os
+import sys, os
 from configparser import ConfigParser
+
 
 def read_config():
     _dict = {}
@@ -26,6 +27,7 @@ def read_config():
         _dict['short_key_two'] = configs['global_listen']['short_key_two']
 
     return _dict
+
 
 if __name__ == '__main__':
     print(read_config())

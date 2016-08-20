@@ -2,10 +2,8 @@ import datetime
 import os
 import sys
 import atexit
-from hashlib import md5
 from subprocess import call
-from base64 import b64encode
-from os.path import expanduser, exists, basename, getsize
+
 
 def capture():
     try:
@@ -21,6 +19,7 @@ def capture():
     if save == 1:
         sys.exit()
     return file_path, file_name
+
 
 if __name__ == '__main__':
     print(capture())

@@ -4,6 +4,7 @@ from uploader.QiniuUploader import QiniuUploader
 import time
 import sys
 import os
+
 try:
     import pythoncom
 except ImportError:
@@ -21,8 +22,9 @@ __version__ = '0.2.2'
 __author__ = 'kingname'
 
 from config import read_config
-class MarkrdownPicPicker(object):
 
+
+class MarkrdownPicPicker(object):
     CONFIG_PATH = 'config.ini'
 
     def __init__(self, link_only=False):
@@ -50,13 +52,12 @@ class MarkrdownPicPicker(object):
         To test if the config reading is ok
         :return: None
         """
-        print("folder",self.picture_folder)
-        print("suffix",self.picture_suffix)
-        print("picture_bed",self.picture_bed)
+        print("folder", self.picture_folder)
+        print("suffix", self.picture_suffix)
+        print("picture_bed", self.picture_bed)
 
     def init_environment(self):
         self.__dict__.update(read_config())
-        # self._to_string()
         if not self.method \
                 or not self.picture_folder \
                 or not self.picture_suffix \
@@ -115,16 +116,10 @@ class MarkrdownPicPicker(object):
             print('get picture from clipboard error because: {}'.format(e))
         return '', ''
 
+
 if __name__ == '__main__':
-    # arg = sys.argv[-1]
-    # if arg == '-linkonly':
-    #     MarkrdownPicPicker(link_only=True)
-    # else:
-    #     MarkrdownPicPicker()
-
-    # test qiniu uploader
-
-    config_info = read_config()
-    qiniu = QiniuUploader(config_info['uploader_info'])
-    print(qiniu.container_name,qiniu.url,qiniu.upload_handler)
-    qiniu.upload('uploader/picture.jpeg','test_pic')
+    arg = sys.argv[-1]
+    if arg == '-linkonly':
+        MarkrdownPicPicker(link_only=True)
+    else:
+        MarkrdownPicPicker()
