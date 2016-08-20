@@ -155,7 +155,11 @@ else:
 
 ## TODO
 * More screenshots
+* Save image from pasteboard without pngpaste
 * More Picture web host
 * Hide the terminal windows
 * Linux Usable
+
+## Thanks to
+[laixintao](https://github.com/laixintao)
 

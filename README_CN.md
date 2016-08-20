@@ -143,6 +143,10 @@ else:
 
 ## TODO
 * 支持更多的截图方式
+* 不借助pngpaste实现获取剪贴板中的截图
 * 支持更多的图床
 * 窗口隐藏
 * 适配Linux
+
+## 感谢
+[赖信涛](https://github.com/laixintao)
