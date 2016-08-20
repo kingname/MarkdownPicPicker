@@ -4,6 +4,7 @@ from uploader.QiniuUploader import QiniuUploader
 import time
 import sys
 import os
+
 try:
     import pythoncom
 except ImportError:
@@ -20,9 +21,10 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 __version__ = '0.2.2'
 __author__ = 'kingname'
 
+from config import read_config
+
 
 class MarkrdownPicPicker(object):
-
     CONFIG_PATH = 'config.ini'
 
     def __init__(self, link_only=False):
@@ -45,8 +47,17 @@ class MarkrdownPicPicker(object):
         elif self.method == 'global_listen':
             self.keyboard_listen()
 
+    def _to_string(self):
+        """
+        To test if the config reading is ok
+        :return: None
+        """
+        print("folder", self.picture_folder)
+        print("suffix", self.picture_suffix)
+        print("picture_bed", self.picture_bed)
+
     def init_environment(self):
-        self.read_config()
+        self.__dict__.update(read_config())
         if not self.method \
                 or not self.picture_folder \
                 or not self.picture_suffix \
@@ -55,28 +66,8 @@ class MarkrdownPicPicker(object):
             exit()
         if not os.path.exists(self.picture_folder):
             os.makedirs(self.picture_folder)
-
-    def read_config(self):
-        if getattr(sys, 'frozen', None):
-            config_path = os.path.join(os.path.dirname(sys.executable), self.CONFIG_PATH)
-        else:
-            config_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), self.CONFIG_PATH)
-        configs = ConfigParser()
-        if not os.path.exists(config_path):
-            print('can not find the config.ini, exit')
-            exit()
-        configs.read(config_path)
-        self.method = configs['basic'].get('run_method', '')
-        self.picture_folder = configs['basic'].get('picture_folder', '')
-        self.picture_suffix = configs['basic'].get('picture_suffix', '')
-        self.picture_bed = configs['basic'].get('picture_bed', '')
-
         if self.picture_bed:
-            self.uploader = QiniuUploader(configs['qiniu'])
-
-        if self.method == 'global_listen':
-            self.short_key_one = configs['global_listen']['short_key_one']
-            self.short_key_two = configs['global_listen']['short_key_two']
+            self.uploader = QiniuUploader(self.uploader_info)
 
     def keyboard_listen(self):
         if not pythoncom or not pyHook:
@@ -124,6 +115,7 @@ class MarkrdownPicPicker(object):
         except Exception as e:
             print('get picture from clipboard error because: {}'.format(e))
         return '', ''
+
 
 if __name__ == '__main__':
     arg = sys.argv[-1]
