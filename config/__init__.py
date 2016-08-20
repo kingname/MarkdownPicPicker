@@ -6,7 +6,7 @@ from configparser import ConfigParser
 def read_config():
     _dict = {}
     if getattr(sys, 'frozen', None):
-        config_path = os.path.join(os.path.dirname(sys.executable), 'config.ini')
+        config_path = os.path.join(os.path.dirname(sys.executable), 'config', 'config.ini')
     else:
         config_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'config.ini')
 

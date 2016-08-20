@@ -6,7 +6,7 @@ try:
     from config import read_config
 except Exception as _:
     print('read config error, use default info.')
-    config = None
+    read_config = None
 
 __version__ = '1.0.0'
 __author__ = 'kingname'
@@ -35,14 +35,15 @@ class MarkrdownPicPicker(object):
         """
         print("folder", self.picture_folder)
         print("suffix", self.picture_suffix)
-        print("picture_bed", self.picture_host)
+        print("picture_host", self.picture_host)
 
     def init_environment(self):
-        if not config:
+        if not read_config:
             self.uploader = Uploader()
         else:
             self.__dict__.update(read_config())
             self.cwd = os.path.dirname(os.path.dirname(self.config_path))
+
             uploader_list = self._find_uploader()
             if self.picture_host and self.picture_host in uploader_list:
                 self.uploader = __import__('uploader.' + self.picture_host,
