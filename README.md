@@ -46,11 +46,6 @@ url = http://7sbpmp.com1.z0.glb.clouddn.com/{}
 `container_name` 为下图所示内容：
 ![](http://7sbpmp.com1.z0.glb.clouddn.com/2016-06-04-20-24-40.png) 
 
-`short_key_one` 和 `short_key_two` 为快捷键的两个按键，默认为左侧windows徽标键(`Lwin`) 和 字母 `C`。
-
-### 缺省设置
-如果程序找不到配置文件，程序将会默认使用SM.MS来作为图床。
-
 ###只复制图片链接
 
 如果你希望只将图片的url复制到剪贴板中，而不是复制\!\[\]\(图片url\)， 你可以为markdownpicpicker.exe添加上 `-linkonly` 参数。在markdownpicpicker.exe所在目录打开cmd, 输入:
@@ -69,17 +64,17 @@ markdownpicpicker.exe -linkonly
 
 ### 规则说明：
 
-1. 请将你的图床上传程序放在uploader文件夹下，文件名任意，例如`ExampleUploader.py`
-2. 程序的类名必需为Uploader
-3. 如果你的图床需要token等等一系列参数，请在__init__中设置config_info参数,你写在配置文件中的所有参数都将会通过config_info以字典的形式传进来。
+* 请将你的图床上传程序放在uploader文件夹下，文件名任意，例如`ExampleUploader.py`
+* 程序的类名必需为Uploader
+* 如果你的图床需要token等等一系列参数，请在__init__中设置config_info参数,你写在配置文件中的所有参数都将会通过config_info以字典的形式传进来。
 ```
 def __init__(self, config_info=None)
 ```
-4. 程序必须有一个upload方法：
+* 程序必须有一个upload方法：
 ```
 def upload(self, picture_path, link_only=False)
 ```
-5.打开config/config.ini, 添加你的上传程序的相关信息，Section为你的上传程序的名字（不含.py）并设定[basic]下的picture_host为此Section例如：
+* 打开config/config.ini, 添加你的上传程序的相关信息，Section为你的上传程序的名字（不含.py）并设定[basic]下的picture_host为此Section例如：
 ```
 [basic]
 picture_folder = pic
