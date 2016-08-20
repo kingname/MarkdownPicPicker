@@ -15,6 +15,13 @@ MarkdownPicPicker 是一个Markdown写作辅助工具。它能将剪贴板中的
 
 ## 使用方法
 
+1. 下载最新版程序：[https://github.com/kingname/MarkdownPicPicker/releases/download/v1.0.0/MarkdownPicPicker_v1.0.0.zip](https://github.com/kingname/MarkdownPicPicker/releases/download/v1.0.0/MarkdownPicPicker_v1.0.0.zip)
+2. 复制图片到剪贴板
+3. 双击运行markdownpicpicker.exe
+
+### 使用七牛云
+在没有配置文件的情况下，MarkdownPicPicker默认使用的图床为SM.MS, 但是这个图床仅仅作为临时使用，不保证数据安全。如果你需要使用七牛云，请创建config文件夹，并将config.ini配置好再放进去。
+
 ### 配置
 
 配置文件保存在`config/config.ini`文件中，其意义分别如下：
@@ -23,16 +30,13 @@ MarkdownPicPicker 是一个Markdown写作辅助工具。它能将剪贴板中的
 picture_folder = pic #图片本地保存文件夹
 picture_suffix = png #图片后缀名
 # 图片上传插件的文件名，不带".py"
-picture_host = SmUploader
+picture_host = QiniuUploader
 
 [QiniuUploader]
-access_key = Q6sS422O0fafadfasdfahqasdftqvyQasdf5Zvzw
-secret_key = 6QtAqqTxoSxZP-asdfasdfaaffasCmoOaB2aLObM
+access_key = Q6sS422O0fasfsadasdfahqasdftqvyQasdf5Zvzw
+secret_key = 6QtAqqTxoSxZadffsdfasdfaaffasCmoOaB2aLObM
 container_name = picturebed
 url = http://7sbpmp.com1.z0.glb.clouddn.com/{}
-
-[SmUploader]
-url = https://sm.ms/api/upload
 ```
 
 其中`access_key` 和 `secret_key` 可以在七牛云的控制面板中看到，如图：
@@ -45,14 +49,7 @@ url = https://sm.ms/api/upload
 `short_key_one` 和 `short_key_two` 为快捷键的两个按键，默认为左侧windows徽标键(`Lwin`) 和 字母 `C`。
 
 ### 缺省设置
-如果程序找不到配置文件，程序将会默认使用SM.MS来作为图床。但是这个图床仅仅作为临时使用，不保证数据安全。
-
-### 使用
-
-1. 下载最新版程序：[https://github.com/kingname/MarkdownPicPicker/releases/download/v1.0.0/MarkdownPicPicker_v1.0.0.zip](https://github.com/kingname/MarkdownPicPicker/releases/download/v1.0.0/MarkdownPicPicker_v1.0.0.zip)
-2. 复制图片到剪贴板
-3. 双击运行markdownpicpicker.exe
-4. 默认使用的图床为SM.MS,如果你需要使用七牛云，请创建config文件夹，并将config.ini配置好再放进去。
+如果程序找不到配置文件，程序将会默认使用SM.MS来作为图床。
 
 ###只复制图片链接
 
@@ -74,7 +71,7 @@ markdownpicpicker.exe -linkonly
 
 1. 请将你的图床上传程序放在uploader文件夹下，文件名任意，例如`ExampleUploader.py`
 2. 程序的类名必需为Uploader
-3. 如果你的图床需要token等等一系列参数，请在构造函数中设置config_info参数,你写在配置文件中的所有参数都将会通过config_info以字典的形式传进来。
+3. 如果你的图床需要token等等一系列参数，请在__init__中设置config_info参数,你写在配置文件中的所有参数都将会通过config_info以字典的形式传进来。
 ```
 def __init__(self, config_info=None)
 ```
@@ -82,7 +79,7 @@ def __init__(self, config_info=None)
 ```
 def upload(self, picture_path, link_only=False)
 ```
-5.打开config/config.ini, 添加你的上传程序的相关信息，并设定[basic]下的picture_host为你的上传程序的文件名（不要.py）例如：
+5.打开config/config.ini, 添加你的上传程序的相关信息，Section为你的上传程序的名字（不含.py）并设定[basic]下的picture_host为此Section例如：
 ```
 [basic]
 picture_folder = pic
