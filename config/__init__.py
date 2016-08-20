@@ -1,4 +1,5 @@
-import sys, os
+import sys
+import os
 from configparser import ConfigParser
 
 
@@ -8,23 +9,21 @@ def read_config():
         config_path = os.path.join(os.path.dirname(sys.executable), 'config.ini')
     else:
         config_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'config.ini')
-    print(config_path)
-    configs = ConfigParser()
+
     if not os.path.exists(config_path):
-        print('can not find the config.ini, exit')
-        exit()
+        print('can not find the config.ini, use the default sm uploader.'
+              'attention: this website may breakdown in the future, only used temporarily.')
+        _dict['picture_host'] = 'SmUploader'
+        return _dict
+    configs = ConfigParser()
     configs.read(config_path)
-    _dict['method'] = configs['basic'].get('run_method', '')
     _dict['picture_folder'] = configs['basic'].get('picture_folder', '')
     _dict['picture_suffix'] = configs['basic'].get('picture_suffix', '')
-    _dict['picture_bed'] = configs['basic'].get('picture_bed', '')
+    _dict['picture_host'] = configs['basic'].get('picture_host', '')
+    _dict['config_path'] = config_path
 
-    if _dict['picture_bed']:
-        _dict['uploader_info'] = configs['qiniu']
-
-    if _dict['method'] == 'global_listen':
-        _dict['short_key_one'] = configs['global_listen']['short_key_one']
-        _dict['short_key_two'] = configs['global_listen']['short_key_two']
+    if _dict['picture_host']:
+        _dict['uploader_info'] = configs[_dict['picture_host']]
 
     return _dict
 
