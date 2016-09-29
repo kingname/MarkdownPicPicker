@@ -39,8 +39,8 @@ MarkdownPicPicker 是一个Markdown写作辅助工具。它能将剪贴板中的
 配置文件保存在`config/config.ini`文件中，其意义分别如下：
 ```ini
 [basic]
-picture_folder = pic #图片本地保存文件夹
-picture_suffix = png #图片后缀名
+picture_folder = pic #必需，用来在本地保存图片的副本，名字任意
+picture_suffix = png #必需，图片后缀名，请使用png
 # 图片上传插件的文件名，不带".py"
 picture_host = QiniuUploader
 
@@ -50,6 +50,8 @@ secret_key = 6QtAqqTxoSxZadffsdfasdfaaffasCmoOaB2aLObM
 container_name = picturebed
 url = http://7sbpmp.com1.z0.glb.clouddn.com/{}
 ```
+
+注意：在实际使用中，请将上面的注释部分去掉，避免出现不必要的问题。
 
 其中`access_key` 和 `secret_key` 可以在七牛云的控制面板中看到，如图：
 ![](http://7sbpmp.com1.z0.glb.clouddn.com/20160605083025.png) 

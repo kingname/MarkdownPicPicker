@@ -34,11 +34,11 @@ Version 1.1.0 can do：
 
 If there is not a config, MarkdownPicpicker will use SM.SM as the default picture host. But this website may breakdown in the future and your data maybe unsafe. If you want to use Qiniu web host, please create a folder called `config` and write the config.ini like follow:
 
-Please Create/Edit `congig/config.ini`, every item in it means：
+Please Create/Edit `config/config.ini`, every item in it means：
 ```ini
 [basic]
-picture_folder = pic # the local folder to save image
-picture_suffix = png #the format of your image, 'png'.
+picture_folder = pic # necessary, the local folder to save a copy of image
+picture_suffix = png #necessary, the format of your image, 'png' only
 
 picture_host = QiniuUploader 
 
@@ -48,6 +48,8 @@ secret_key = 6QtAqqTxoSadffadfgewehxPLX2CCmoOaB2aLObM
 container_name = picturebed
 url = http://7sbpmp.com1.z0.glb.clouddn.com/{}
 ```
+
+Notice: please remove the comments in `config.ini`.
 
 In the config, `access_key` and `secret_key` can be found in Qiniu's controlpanel：
 ![](http://7sbpmp.com1.z0.glb.clouddn.com/20160605083025.png) 
