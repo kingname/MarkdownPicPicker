@@ -4,7 +4,7 @@
 
 MarkdownPicPicker 是一个Markdown写作辅助工具。它能将剪贴板中的图片上传到网络图床中，并将markdown格式的图片链接(\!\[\]\(<图片地址>\))复制到剪贴板中。
 
-![MarkdownPicPicker演示](http://7sbpmp.com1.z0.glb.clouddn.com/MarkdownPicPickerPrew.gif)
+![MarkdownPicPicker演示](screenshots/MarkdownPicPickerPrew.gif)
 
 ## 功能介绍
 

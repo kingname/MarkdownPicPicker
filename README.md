@@ -4,7 +4,7 @@
 
 MarkdownPicPicker is an assistant which can help you add picture in Markdown. It will upload the image in your clipboard to web picture host and copy the Markdown-format link(\!\[\]\(url\)) to your clipboard or pasteboard. Now it supports Windows and Mac OS.
 
-![Preview of MarkdownPicPicker](http://7sbpmp.com1.z0.glb.clouddn.com/MarkdownPicPickerPrew.gif)
+![Preview of MarkdownPicPicker](/screenshots/MarkdownPicPickerPrew.gif)
 
 ## Function
 
