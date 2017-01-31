@@ -28,9 +28,9 @@ MarkdownPicPicker 是一个Markdown写作辅助工具。它能将剪贴板中的
 
 ### Mac OS
 0. 安装pngpaste: `brew install pngpaste`
-1. Clone 源代码
-2. 复制图片到剪贴板
-3. `python MarkdownPicPicker.py`
+1. 下载并解压MarkdownPicPicker：[https://github.com/kingname/MarkdownPicPicker/releases/download/v1.0.0/macOS_MarkdownPicPicker.zip](https://github.com/kingname/MarkdownPicPicker/releases/download/v1.0.0/macOS_MarkdownPicPicker.zip)
+2. 截图到剪贴板
+3. 运行MarkdownPicPicker.app
 
 ## 配置
 ### 使用七牛云

@@ -26,9 +26,9 @@ Version 1.1.0 can do：
 
 ### Mac OS
 1. Install pngpaste: `brew install pngpaste`
-2. Clone MarkdownPicPicker source code
+2. Download and unzip MarkdownPicPicker at: [https://github.com/kingname/MarkdownPicPicker/releases/download/v1.0.0/macOS_MarkdownPicPicker.zip](https://github.com/kingname/MarkdownPicPicker/releases/download/v1.0.0/macOS_MarkdownPicPicker.zip)
 3. Copy image into pasteboard
-4. `python MarkdownPicPicker.py`
+4. Run MarkdownPicPicker.app
 
 ## Config
 
