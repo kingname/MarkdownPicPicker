@@ -8,12 +8,11 @@ except Exception as _:
     print('read config error, use default info.')
     read_config = None
 
-__version__ = '1.1.0'
+__version__ = '1.2.0'
 __author__ = 'kingname'
 
 
 class MarkrdownPicPicker(object):
-
     def __init__(self, link_only=False):
         self.cwd = ''
         self.picture_folder = 'pic'
@@ -57,11 +56,12 @@ class MarkrdownPicPicker(object):
             exit()
 
     def upload_picture(self):
-        picture_path = self.imageGrab.save_picture()
-        if not picture_path:
+        picture_path_list = self.imageGrab.save_picture()
+        if not picture_path_list:
             return False
         else:
-            self.uploader.upload(picture_path, link_only=True if self.link_only else False)
+            # for picture_path in picture_path_list:
+            self.uploader.upload(picture_path_list, link_only=True if self.link_only else False)
             return True
 
     def _find_uploader(self):
@@ -80,3 +80,5 @@ if __name__ == '__main__':
         MarkrdownPicPicker(link_only=True)
     else:
         MarkrdownPicPicker()
+
+

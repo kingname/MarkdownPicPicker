@@ -31,26 +31,33 @@ class Uploader(object):
     def __init__(self, _=None):
         self.url = self.DEFAULT_URL
 
-    def upload(self, picture_path, link_only=False):
-        picture_file_handler = open(picture_path, 'rb')
-        data = {'smfile': picture_file_handler}
-        result_json = requests.post(self.url, files=data).content
-        try:
-            result_dict = json.loads(result_json.decode())
-        except Exception as _:
-            print('the result of the picture bed is not standard json.' )
-            return None
-        finally:
-            picture_file_handler.close()
-        pic_url = result_dict.get('data', {}).get('url', '')
-        if pic_url:
-            self.write_markdown_picture_url(pic_url, link_only)
+    def upload(self, picture_path_list, link_only=False):
+        success_uploaded_list = []
+        for picture_path in picture_path_list:
+            picture_file_handler = open(picture_path, 'rb')
+            data = {'smfile': picture_file_handler}
+            result_json = requests.post(self.url, files=data).content
+            try:
+                result_dict = json.loads(result_json.decode())
+            except Exception as _:
+                print('the result of the picture bed is not standard json.' )
+                return None
+            finally:
+                picture_file_handler.close()
+            pic_url = result_dict.get('data', {}).get('url', '')
+            if pic_url:
+                success_uploaded_list.append(pic_url)
+        self.write_markdown_picture_url(success_uploaded_list, link_only)
 
-    def write_markdown_picture_url(self, pic_url, link_only=False):
+    def write_markdown_picture_url(self, pic_url_list, link_only=False):
         if link_only:
-            markdown_picture_url = pic_url
+            markdown_picture_url = '\n'.join(pic_url_list)
         else:
-            markdown_picture_url = '![]({})'.format(pic_url)
+            markdown_picture_url_list = []
+            for pic_url in pic_url_list:
+                markdown_picture_url = '![]({})'.format(pic_url)
+                markdown_picture_url_list.append(markdown_picture_url)
+            markdown_picture_url = '\n'.join(markdown_picture_url_list)
         platform = sys.platform
         command = ''
         if platform == 'win32':
