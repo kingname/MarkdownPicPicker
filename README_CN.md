@@ -1,5 +1,7 @@
 # MarkdownPicPicker
 
+[![Documentation Status](https://readthedocs.org/projects/markdownpicpicker/badge/?version=latest)](http://markdownpicpicker.readthedocs.io/en/latest/?badge=latest)
+
 ## 项目介绍
 
 MarkdownPicPicker 是一个Markdown写作辅助工具。它能将剪贴板中的图片上传到网络图床中，并将markdown格式的图片链接(\!\[\]\(<图片地址>\))复制到剪贴板中。
