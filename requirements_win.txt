@@ -1,0 +1,4 @@
+Pillow==3.2.0
+pywin32==220.1
+qiniu==7.0.7
+requests==2.10.0
