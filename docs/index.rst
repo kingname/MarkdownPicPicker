@@ -4,9 +4,6 @@
    contain the root `toctree` directive.
 
 .. image:: https://readthedocs.org/projects/markdownpicpicker/badge/?version=latest
-:target: http://markdownpicpicker.readthedocs.io/en/latest/?badge=latest
-:alt: Documentation Status
-
 .. image:: https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg 
    :target: https://saythanks.io/to/kingname
 
