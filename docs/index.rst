@@ -3,6 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. image:: https://readthedocs.org/projects/markdownpicpicker/badge/?version=latest
+:target: http://markdownpicpicker.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
+
+.. image:: https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg 
+   :target: https://saythanks.io/to/kingname
+
+
 Getting started
 ===============
 MarkdownPicPicker is an assistant which can help you add picture in Markdown. It will upload the image in your clipboard to web picture host and copy the Markdown-format link(\!\[\]\(url\)) to your clipboard or pasteboard. Now it supports Windows and Mac OS.
