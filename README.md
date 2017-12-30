@@ -1,6 +1,7 @@
 # MarkdownPicPicker
 
 [![Documentation Status](https://readthedocs.org/projects/markdownpicpicker/badge/?version=latest)](http://markdownpicpicker.readthedocs.io/en/latest/?badge=latest)
+![](https://travis-ci.org/kingname/MarkdownPicPicker.svg?branch=master)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/kingname)
 
 ## Introduce
