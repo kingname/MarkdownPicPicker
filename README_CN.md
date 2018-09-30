@@ -4,6 +4,10 @@
 ![](https://travis-ci.org/kingname/MarkdownPicPicker.svg?branch=master)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/kingname)
 
+## 注意
+
+七牛云现在上线了一个新功能，强迫你在功能上线30天内必需绑定自定义域名，否则会删除你的临时域名，导致你的所有图片全部不可访问。我已经放弃使用七牛云了。现在推荐使用腾讯云，免费10G流量，不需要备案就能使用CDN，我会尽快上线支持腾讯云的上传组件。
+
 ## 项目介绍
 
 MarkdownPicPicker 是一个Markdown写作辅助工具。它能将剪贴板中的图片上传到网络图床中，并将markdown格式的图片链接(\!\[\]\(<图片地址>\))复制到剪贴板中。
