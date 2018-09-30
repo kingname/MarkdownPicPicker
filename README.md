@@ -4,6 +4,10 @@
 ![](https://travis-ci.org/kingname/MarkdownPicPicker.svg?branch=master)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/kingname)
 
+## Attention
+
+As Qiniu will delete your domain after 30 days, it will not be recommanded anymore. I will write plugin for Tencent Cloud instead.
+
 ## Introduce
 
 MarkdownPicPicker is an assistant which can help you add picture in Markdown. It will upload the image in your clipboard to web picture host and copy the Markdown-format link(\!\[\]\(url\)) to your clipboard or pasteboard. Now it supports Windows and Mac OS.
