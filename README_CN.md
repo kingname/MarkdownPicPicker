@@ -161,4 +161,6 @@ else:
 * 适配Linux
 
 ## 感谢
-[赖信涛](https://github.com/laixintao)
+
+* [赖信涛](https://github.com/laixintao)
+* [Sean10](https://github.com/Sean10)
