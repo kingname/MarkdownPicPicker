@@ -43,4 +43,6 @@ More document and how to develop new uploader, please refer to: [http://markdown
 
 ## Thanks to
 [laixintao](https://github.com/laixintao)
+[Sean10](https://github.com/Sean10)
+
 
