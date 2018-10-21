@@ -1,16 +1,12 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
-
 pyparsing = "==2.1.10"
 qiniu = "==7.0.7"
 requests = "==2.10.0"
-
+"cos-python-sdk-v5" = "*"
 
 [dev-packages]
-
