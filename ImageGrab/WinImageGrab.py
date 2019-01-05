@@ -18,7 +18,7 @@ class WinImageGrab(object):
             picture_data = ImageGrab.grabclipboard()
             if picture_data:
                 picture_data.save(picture_path, self.picture_suffix)
-                return picture_path
+                return [picture_path]
             else:
                 print('there is no picture in clipboard!')
         except Exception as e:
