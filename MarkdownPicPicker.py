@@ -56,7 +56,7 @@ class MarkrdownPicPicker(object):
             exit()
 
     def upload_picture(self):
-        picture_path_list = self.imageGrab.save_picture()
+        picture_path_list = [self.imageGrab.save_picture()]
         if not picture_path_list:
             return False
         else:
