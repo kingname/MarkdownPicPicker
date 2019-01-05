@@ -1,7 +1,12 @@
 # MarkdownPicPicker
 
 [![Documentation Status](https://readthedocs.org/projects/markdownpicpicker/badge/?version=latest)](http://markdownpicpicker.readthedocs.io/en/latest/?badge=latest)
+![](https://travis-ci.org/kingname/MarkdownPicPicker.svg?branch=master)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/kingname)
+
+## Attention
+
+As Qiniu will delete your domain after 30 days, it will not be recommanded anymore. I will write plugin for Tencent Cloud instead.
 
 ## Introduce
 
@@ -38,4 +43,6 @@ More document and how to develop new uploader, please refer to: [http://markdown
 
 ## Thanks to
 [laixintao](https://github.com/laixintao)
+[Sean10](https://github.com/Sean10)
+
 
